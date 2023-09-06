@@ -1,10 +1,13 @@
 #navbar {
-   padding-top: 1rem;
+   padding: 1rem 0 1rem;
    position: fixed;
    top: 0;
    left: 0;
    right: 0;
    margin: 0 auto;
+   background-color: var(--white-color);
+   z-index: 99;
+   box-shadow: var(--box-shadow);
    .app-logo {
       .app-logo__img {
       }
