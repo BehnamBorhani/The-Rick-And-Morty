@@ -28,12 +28,12 @@ html {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    row-gap: 30px;
 }
 
 .row>* {
     padding-right: 15px;
     padding-left: 15px;
-    margin-bottom: 30px;
 }
 
 .col {
