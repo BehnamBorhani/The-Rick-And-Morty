@@ -1,9 +1,18 @@
 import React from "react";
 import "./CharacterCard.scss";
+import { Link } from "react-router-dom";
 
-const CharacterCard = ({ name, image, status, species, location, origin }) => {
+const CharacterCard = ({
+   id,
+   name,
+   image,
+   status,
+   species,
+   location,
+   origin,
+}) => {
    return (
-      <div className="card">
+      <Link to={`./characterDetails/${id}`} className="card">
          <div className="row">
             <div className="col-12">
                <div className="card__img">
@@ -31,7 +40,7 @@ const CharacterCard = ({ name, image, status, species, location, origin }) => {
                </div>
             </div>
          </div>
-      </div>
+      </Link>
    );
 };
 
