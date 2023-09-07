@@ -1,17 +1,13 @@
 import React from "react";
 import "./styles/App.scss";
-import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
-import Characters from "./components/Characters/Characters";
-import Footer from "./components/Footer/Footer";
+import routes from "./routes";
+import { useRoutes } from "react-router-dom";
 
 function App() {
+   const router = useRoutes(routes)
    return (
       <>
-         <Navbar />
-         <Header />
-         <Characters/>
-         <Footer/>
+         {router}
       </>
    );
 }
