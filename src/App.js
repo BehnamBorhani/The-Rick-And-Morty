@@ -3,6 +3,7 @@ import "./styles/App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Characters from "./components/Characters/Characters";
+import Footer from "./components/Footer/Footer";
 
 function App() {
    return (
@@ -10,7 +11,7 @@ function App() {
          <Navbar />
          <Header />
          <Characters/>
-         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+         <Footer/>
       </>
    );
 }
