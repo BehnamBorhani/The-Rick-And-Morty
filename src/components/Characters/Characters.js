@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Characters.scss";
 import CharacterCard from "../CharacterCard/CharacterCard";
-import useCharacters from "../../hooks/useCharacters";
 import { RingLoader } from "react-spinners";
+import { CharacterContext } from "../../contexts/DataContext";
 
 const Characters = () => {
-   const { data, isLoading } = useCharacters();
+   const { data, isLoading } = useContext(CharacterContext);
 
    return (
       <section id="characters">
