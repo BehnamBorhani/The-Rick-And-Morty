@@ -1,28 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./CharacterDetails.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import useCharacter from "../../hooks/useCharacter";
 
 const CharacterDetails = () => {
    const { characterID } = useParams();
-   const [character, setCharacter] = useState({});
+   const { data } = useCharacter(characterID);
+   console.log(data);
 
-   useEffect(() => {
-      axios
-         .get(`https://rickandmortyapi.com/api/character/${characterID}`)
-         .then((response) => setCharacter(response.data));
-   }, []);
-   console.log(character);
-
-    
    return (
       <>
          <Navbar />
          <Header />
-        {/*  <section id="character-details">
+         {/*  <section id="character-details">
             <div className="container">
                <div className="row">
                   <div className="col-12">
