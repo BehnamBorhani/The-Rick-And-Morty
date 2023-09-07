@@ -10,7 +10,7 @@ const Characters = () => {
       <section id="characters">
          <div className="container">
             <div className="row">
-               {data?.results.map((character) => (
+               {data?.results?.map((character) => (
                   <div
                      className="col-12 col-md-6 col-lg-4 col-xl-3"
                      key={character.id}
