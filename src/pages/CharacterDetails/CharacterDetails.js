@@ -37,25 +37,25 @@ const CharacterDetails = () => {
                               className="character-image"
                            />
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-12 col-sm-6 col-md-4">
                            <h2 className="character-name">{character?.name}</h2>
                            <h3 className="character-status">
                               {character?.status} - {character?.species}
                            </h3>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-12 col-sm-6 col-md-4">
                            <p className="title">Gender:</p>
                            <h2 className="info">{character?.gender}</h2>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-12 col-sm-6 col-md-4">
                            <p className="title">Last known location:</p>
                            <h2 className="info">{character?.location?.name}</h2>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-12 col-sm-6 col-md-4">
                            <p className="title">Origin:</p>
                            <h2 className="info">{character?.origin?.name}</h2>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div className="col-12 col-sm-6 col-md-4">
                            <p className="title">First seen in:</p>
                            <h2 className="info">
                               {episode?.name} ({episode?.episode})
