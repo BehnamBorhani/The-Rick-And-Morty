@@ -3,6 +3,7 @@ import "./Characters.scss";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { RingLoader } from "react-spinners";
 import { CharactersContext } from "../../contexts/DataContext";
+import SearchBox from "../SearchBox/SearchBox";
 
 const Characters = () => {
    const { data, isLoading } = useContext(CharactersContext);
@@ -11,6 +12,9 @@ const Characters = () => {
       <section id="characters">
          <div className="container">
             <div className="row">
+               <div className="col-12">
+                  <SearchBox />
+               </div>
                {isLoading ? (
                   <div className="col-12">
                      <RingLoader
