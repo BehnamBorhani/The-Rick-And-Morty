@@ -4,16 +4,16 @@ import { BsGithub } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import {
-   CharacterContext,
-   EpisodeContext,
-   LocationContext,
+   CharactersContext,
+   EpisodesContext,
+   LocationsContext,
 } from "../../contexts/DataContext";
 
 const Footer = () => {
-   const characters = useContext(CharacterContext);
-   const locations = useContext(LocationContext);
-   const episodes = useContext(EpisodeContext);
-   
+   const characters = useContext(CharactersContext);
+   const locations = useContext(LocationsContext);
+   const episodes = useContext(EpisodesContext);
+
    return (
       <footer id="footer">
          <div className="container">
