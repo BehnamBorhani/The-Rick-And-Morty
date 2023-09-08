@@ -22,7 +22,7 @@ const useFilter = (name, gender, status) => {
       {
          initialData: () => {
             const characters = queryClient.getQueryData(["Characters"]);
-            const filteredCharacters = characters?.results?.find(
+            const filteredCharacters = characters?.results?.filter(
                (character) =>
                   character.name === name ||
                   character.gender === gender ||
@@ -31,7 +31,7 @@ const useFilter = (name, gender, status) => {
 
             return filteredCharacters ? filteredCharacters : undefined;
          },
-         refetchInterval: 2000
+         // refetchInterval: 2000
       }
    );
 };

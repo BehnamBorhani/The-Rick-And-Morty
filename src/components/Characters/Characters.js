@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Characters.scss";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { RingLoader } from "react-spinners";
@@ -9,7 +9,11 @@ const Characters = () => {
    const [name, setName] = useState("");
    const [gender, setGender] = useState("");
    const [status, setStatus] = useState("");
-   const { data: filteredData, isLoading } = useFilter(name, gender, status);
+   const { data: filteredData, isLoading, refetch } = useFilter(name, gender, status);
+
+   useEffect(() => {
+      refetch()
+   }, [name, gender, status]);
 
    return (
       <section id="characters">
