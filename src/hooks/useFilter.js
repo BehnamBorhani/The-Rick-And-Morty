@@ -1,22 +1,35 @@
 import { useQuery, useQueryClient } from "react-query";
 
-const useFilter = (id) => {
+const useFilter = (name, gender, status) => {
    const queryClient = useQueryClient();
+   let params = "";
+   if (name) {
+      params += `name=${name}&`;
+   }
+   if (gender) {
+      params += `gender=${gender}&`;
+   }
+   if (status) {
+      params += `status=${status}&`;
+   }
 
    return useQuery(
-      ["SingleCharacter", id],
+      ["FilteredCharacters"],
       () =>
-         fetch(`https://rickandmortyapi.com/api/character/?`).then(
+         fetch(`https://rickandmortyapi.com/api/character/?${params}`).then(
             (response) => response.json()
          ),
       {
          initialData: () => {
             const characters = queryClient.getQueryData(["Characters"]);
-            const character = characters?.results?.find(
-               (character) => character.id === +id
+            const filteredCharacters = characters?.results?.find(
+               (character) =>
+                  character.name === name ||
+                  character.gender === gender ||
+                  character.status === status
             );
 
-            return character ? character : undefined;
+            return filteredCharacters ? filteredCharacters : undefined;
          },
       }
    );
