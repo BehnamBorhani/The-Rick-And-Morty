@@ -3,11 +3,28 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const client = new QueryClient({
+   defaultOptions: {
+      queries: {
+         cacheTime: 60000, //cash for 1 minute
+         staleTime: 1000, //stale after 5 seconds
+      },
+   },
+});
+
 root.render(
    <React.StrictMode>
-         <App />
+      <BrowserRouter>
+         <QueryClientProvider client={client}>
+            <App />
+            <ReactQueryDevtools />
+         </QueryClientProvider>
+      </BrowserRouter>
    </React.StrictMode>
 );
 

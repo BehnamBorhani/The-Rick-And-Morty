@@ -1,0 +1,10 @@
+#characters {
+   background-color: var(--secondary-color);
+   color: var(--white-color);
+   padding: 5rem 0 5rem;
+   & > .container {
+      & > .row {
+         row-gap: 5rem;
+      }
+   }
+}
