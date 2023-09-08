@@ -6,6 +6,7 @@ const SearchBox = () => {
       <div className="searchbox">
          <div className="row">
             <div className="col-6">
+               <label htmlFor="name">Name:</label>
                <input
                   type="text"
                   name="name"
@@ -14,6 +15,7 @@ const SearchBox = () => {
                />
             </div>
             <div className="col-3">
+               <label htmlFor="gender">Gender:</label>
                <select name="gender" className="filter">
                   <option value="male" selected>
                      male
@@ -22,6 +24,7 @@ const SearchBox = () => {
                </select>
             </div>
             <div className="col-3">
+               <label htmlFor="status">Status:</label>
                <select name="status" className="filter">
                   <option value="alive" selected>
                      alive
