@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "react-query";
 
 const useEpisode = (episodeUrl) => {
    const queryClient = useQueryClient();
-   const episodeID = episodeUrl.split("/").pop();
+   const episodeID = episodeUrl?.split("/").pop();
 
    return useQuery(
       ["Episode", episodeID],

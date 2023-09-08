@@ -31,6 +31,7 @@ const useFilter = (name, gender, status) => {
 
             return filteredCharacters ? filteredCharacters : undefined;
          },
+         refetchInterval: 2000
       }
    );
 };
