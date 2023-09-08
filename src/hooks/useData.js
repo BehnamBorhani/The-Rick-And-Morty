@@ -1,18 +1,18 @@
 import { useQueries } from "react-query";
 
-const characterFetcher = () => {
+const charactersFetcher = () => {
    return fetch("https://rickandmortyapi.com/api/character").then((response) =>
       response.json()
    );
 };
 
-const locationFetcher = () => {
+const locationsFetcher = () => {
    return fetch("https://rickandmortyapi.com/api/location").then((response) =>
       response.json()
    );
 };
 
-const episodeFetcher = () => {
+const episodesFetcher = () => {
    return fetch("https://rickandmortyapi.com/api/episode").then((response) =>
       response.json()
    );
@@ -20,9 +20,9 @@ const episodeFetcher = () => {
 
 const useData = () => {
    return useQueries([
-      { queryKey: "character", queryFn: characterFetcher },
-      { queryKey: "location", queryFn: locationFetcher },
-      { queryKey: "episode", queryFn: episodeFetcher },
+      { queryKey: "Characters", queryFn: charactersFetcher },
+      { queryKey: "Locations", queryFn: locationsFetcher },
+      { queryKey: "Episodes", queryFn: episodesFetcher },
    ]);
 };
 

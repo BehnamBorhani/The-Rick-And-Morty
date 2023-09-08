@@ -16,11 +16,7 @@ const useCharacter = (id) => {
                (character) => character.id === +id
             );
 
-            if (character) {
-               return { data: character };
-            } else {
-               return undefined;
-            }
+            return character ? character : undefined;
          },
       }
    );
