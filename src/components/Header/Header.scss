@@ -14,9 +14,19 @@
       background-size: contain;
 
       .header__title {
-         font-size: 9rem;
+         font-size: 6rem;
          font-weight: 900;
          z-index: 1;
+      }
+   }
+}
+
+@media only screen and (min-width: 576px) {
+   #header {
+      .header__wrapper {
+         .header__title {
+            font-size: 9rem;
+         }
       }
    }
 }
