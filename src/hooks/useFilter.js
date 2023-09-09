@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const useFilter = (page, name, gender, status) => {
    const queryClient = useQueryClient();
