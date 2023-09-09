@@ -5,7 +5,7 @@ const SearchBox = ({ name, setName, gender, setGender, status, setStatus }) => {
    return (
       <div className="searchbox">
          <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-sm-6">
                <label htmlFor="name">Name:</label>
                <input
                   type="text"
@@ -16,7 +16,7 @@ const SearchBox = ({ name, setName, gender, setGender, status, setStatus }) => {
                   onChange={(event) => setName(event.target.value)}
                />
             </div>
-            <div className="col-3">
+            <div className="col-6 col-sm-3">
                <label htmlFor="gender">Gender:</label>
                <select
                   name="gender"
@@ -31,7 +31,7 @@ const SearchBox = ({ name, setName, gender, setGender, status, setStatus }) => {
                   <option value="">all</option>
                </select>
             </div>
-            <div className="col-3">
+            <div className="col-6 col-sm-3">
                <label htmlFor="status">Status:</label>
                <select
                   name="status"
