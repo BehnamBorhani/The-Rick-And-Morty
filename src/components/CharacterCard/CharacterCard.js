@@ -12,7 +12,7 @@ const CharacterCard = ({
    origin,
 }) => {
    return (
-      <Link to={`./characterDetails/${id}`} className="card">
+      <Link to={`/characterDetails/${id}`} className="card">
          <div className="row">
             <div className="col-12">
                <div className="card__img">
