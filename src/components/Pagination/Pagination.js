@@ -6,7 +6,12 @@ const Pagination = ({ pageCount, page, setPage }) => {
 
    return (
       <ul className="pagination">
-         <li className="pagination__number">&lt;</li>
+         <li
+            className="pagination__number"
+            onClick={() => page > 1 && setPage(page - 1)}
+         >
+            &lt;
+         </li>
          {pageNumbers
             .map((number) => {
                let pageNumber = number + 1;
@@ -23,7 +28,12 @@ const Pagination = ({ pageCount, page, setPage }) => {
                );
             })
             .splice(0, 5)}
-         <li className="pagination__number">&gt;</li>
+         <li
+            className="pagination__number"
+            onClick={() => page < 5 && setPage(page + 1)}
+         >
+            &gt;
+         </li>
       </ul>
    );
 };

@@ -18,6 +18,8 @@
       border: 1px solid var(--white-color);
       border-radius: 50%;
       padding: 1rem;
+      cursor: pointer;
+      user-select: none;
       &.active {
          background-color: #0047d5;
          border: none;
