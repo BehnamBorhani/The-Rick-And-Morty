@@ -4,15 +4,20 @@ import CharacterCard from "../CharacterCard/CharacterCard";
 import { RingLoader } from "react-spinners";
 import SearchBox from "../SearchBox/SearchBox";
 import useFilter from "../../hooks/useFilter";
+import Pagination from "../Pagination/Pagination";
 
 const Characters = () => {
    const [name, setName] = useState("");
    const [gender, setGender] = useState("");
    const [status, setStatus] = useState("");
-   const { data: filteredData, isLoading, refetch } = useFilter(name, gender, status);
+   const {
+      data: filteredData,
+      isLoading,
+      refetch,
+   } = useFilter(name, gender, status);
 
    useEffect(() => {
-      refetch()
+      refetch();
    }, [name, gender, status]);
 
    return (
@@ -47,6 +52,9 @@ const Characters = () => {
                      </div>
                   ))
                )}
+               <div className="col-12">
+                  <Pagination />
+               </div>
             </div>
          </div>
       </section>
