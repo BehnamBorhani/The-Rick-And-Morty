@@ -1,4 +1,4 @@
-import { useQueries } from "react-query";
+import { useQueries } from "@tanstack/react-query";
 
 const charactersFetcher = () => {
    return fetch("https://rickandmortyapi.com/api/character").then((response) =>
@@ -19,11 +19,13 @@ const episodesFetcher = () => {
 };
 
 const useData = () => {
-   return useQueries([
-      { queryKey: "Characters", queryFn: charactersFetcher },
-      { queryKey: "Locations", queryFn: locationsFetcher },
-      { queryKey: "Episodes", queryFn: episodesFetcher },
-   ]);
+   return useQueries({
+      queries: [
+         { queryKey: ["Characters"], queryFn: charactersFetcher },
+         { queryKey: ["Locations"], queryFn: locationsFetcher },
+         { queryKey: ["Episodes"], queryFn: episodesFetcher },
+      ],
+   });
 };
 
 export default useData;

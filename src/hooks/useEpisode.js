@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const useEpisode = (episodeUrl) => {
    const queryClient = useQueryClient();

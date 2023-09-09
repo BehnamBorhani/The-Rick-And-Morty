@@ -4,26 +4,35 @@ import "./styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient } from "@tanstack/react-query";
+import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const client = new QueryClient({
+const queryClient = new QueryClient({
    defaultOptions: {
       queries: {
-         cacheTime: 60000, //cash for 1 minute
-         staleTime: 1000, //stale after 5 seconds
+         cacheTime: 1000 * 60 * 60 * 24, //cash for 1 Day
+         staleTime: 1000 * 10, //stale after 10 seconds
       },
    },
+});
+
+const localStoragePersistor = createSyncStoragePersister({
+   storage: window.localStorage,
 });
 
 root.render(
    <React.StrictMode>
       <BrowserRouter>
-         <QueryClientProvider client={client}>
+         <PersistQueryClientProvider
+            client={queryClient}
+            persistOptions={{ persister: localStoragePersistor }}
+         >
             <App />
             <ReactQueryDevtools />
-         </QueryClientProvider>
+         </PersistQueryClientProvider>
       </BrowserRouter>
    </React.StrictMode>
 );

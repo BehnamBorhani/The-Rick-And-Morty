@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const useFilter = (page, name, gender, status) => {
    const queryClient = useQueryClient();
@@ -17,7 +17,7 @@ const useFilter = (page, name, gender, status) => {
    }
 
    return useQuery(
-      ["FilteredCharacters"],
+      ["FilteredCharacters", params],
       () =>
          fetch(`https://rickandmortyapi.com/api/character/?${params}`).then(
             (response) => response.json()
@@ -35,6 +35,7 @@ const useFilter = (page, name, gender, status) => {
             return filteredCharacters ? filteredCharacters : undefined;
          },
          // refetchInterval: 2000
+         keepPreviousData: true,
       }
    );
 };
