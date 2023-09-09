@@ -24,7 +24,9 @@ const CharacterCard = ({
                   <div className="row">
                      <div className="col-12">
                         <h2 className="character-name">{name}</h2>
-                        <h3 className="charachter-status">
+                        <h3
+                           className={`charachter-status charachter-status--${status.toLowerCase()}`}
+                        >
                            {status} - {species}
                         </h3>
                      </div>

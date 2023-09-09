@@ -1,18 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Footer.scss";
 import { BsGithub } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
-import {
-   CharactersContext,
-   EpisodesContext,
-   LocationsContext,
-} from "../../contexts/DataContext";
+import useData from "../../hooks/useData";
 
 const Footer = () => {
-   const characters = useContext(CharactersContext);
-   const locations = useContext(LocationsContext);
-   const episodes = useContext(EpisodesContext);
+   const [characters, locations, episodes] = useData();
 
    return (
       <footer id="footer">
@@ -22,17 +16,17 @@ const Footer = () => {
                   <ul className="statistics">
                      <li className="statistics__item">
                         <a href="#" className="statistics__link">
-                           Characters: {characters.data?.info.count}
+                           Characters: {characters?.data?.info.count}
                         </a>
                      </li>
                      <li className="statistics__item">
                         <a href="#" className="statistics__link">
-                           Locations: {locations.data?.info.count}
+                           Locations: {locations?.data?.info.count}
                         </a>
                      </li>
                      <li className="statistics__item">
                         <a href="#" className="statistics__link">
-                           Episodes: {episodes.data?.info.count}
+                           Episodes: {episodes?.data?.info.count}
                         </a>
                      </li>
                   </ul>

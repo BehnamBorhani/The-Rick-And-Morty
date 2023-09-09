@@ -27,6 +27,15 @@
          background-color: #a8a8a8;
       }
    }
+   .charachter-status--alive::before {
+      background-color: #00ce00;
+   }
+   .charachter-status--dead::before {
+      background-color: red;
+   }
+   .charachter-status--unknown::before {
+      background-color: orange;
+   }
 
    .title {
       color: #a8a8a8;
