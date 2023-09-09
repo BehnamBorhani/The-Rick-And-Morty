@@ -1,8 +1,11 @@
 import { useQuery, useQueryClient } from "react-query";
 
-const useFilter = (name, gender, status) => {
+const useFilter = (page, name, gender, status) => {
    const queryClient = useQueryClient();
    let params = "";
+   if (page) {
+      params += `page=${page}&`;
+   }
    if (name) {
       params += `name=${name}&`;
    }

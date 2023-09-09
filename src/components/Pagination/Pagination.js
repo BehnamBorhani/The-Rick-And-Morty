@@ -1,15 +1,28 @@
 import React from "react";
 import "./Pagination.scss";
 
-const Pagination = () => {
+const Pagination = ({ pageCount, page, setPage }) => {
+   const pageNumbers = Array.from(Array(pageCount).keys());
+
    return (
       <ul className="pagination">
          <li className="pagination__number">&lt;</li>
-         <li className="pagination__number active">1</li>
-         <li className="pagination__number">2</li>
-         <li className="pagination__number">3</li>
-         <li className="pagination__number">4</li>
-         <li className="pagination__number">5</li>
+         {pageNumbers
+            .map((number) => {
+               let pageNumber = number + 1;
+               return (
+                  <li
+                     className={`pagination__number ${
+                        pageNumber === page ? "active" : ""
+                     }`}
+                     key={pageNumber}
+                     onClick={() => setPage(pageNumber)}
+                  >
+                     {pageNumber}
+                  </li>
+               );
+            })
+            .splice(0, 5)}
          <li className="pagination__number">&gt;</li>
       </ul>
    );

@@ -10,15 +10,16 @@ const Characters = () => {
    const [name, setName] = useState("");
    const [gender, setGender] = useState("");
    const [status, setStatus] = useState("");
+   const [page, setPage] = useState(1);
    const {
       data: filteredData,
       isLoading,
       refetch,
-   } = useFilter(name, gender, status);
+   } = useFilter(page, name, gender, status);
 
    useEffect(() => {
       refetch();
-   }, [name, gender, status]);
+   }, [page, name, gender, status]);
 
    return (
       <section id="characters">
@@ -53,7 +54,11 @@ const Characters = () => {
                   ))
                )}
                <div className="col-12">
-                  <Pagination />
+                  <Pagination
+                     pageCount={filteredData?.info?.pages}
+                     page={page}
+                     setPage={setPage}
+                  />
                </div>
             </div>
          </div>
