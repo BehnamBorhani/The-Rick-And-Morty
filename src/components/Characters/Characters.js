@@ -19,7 +19,15 @@ const Characters = () => {
 
    useEffect(() => {
       refetch();
-   }, [page, name, gender, status]);
+   }, [page]);
+
+   useEffect(() => {
+      if (page !== 1) {
+         setPage(1);
+      } else {
+         refetch();
+      }
+   }, [name, gender, status]);
 
    return (
       <section id="characters">
