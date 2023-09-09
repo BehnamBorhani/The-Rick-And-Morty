@@ -1,0 +1,28 @@
+.pagination {
+   width: 100%;
+   max-width: fit-content;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+   // border: 1px solid var(--white-color);
+   // border-radius: 3rem;
+   margin: 0 auto;
+   padding: 1rem 2rem;
+   .pagination__number {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--white-color);
+      border-radius: 50%;
+      padding: 1rem;
+      cursor: pointer;
+      user-select: none;
+      &.active {
+         background-color: #0047d5;
+         border: none;
+      }
+   }
+}

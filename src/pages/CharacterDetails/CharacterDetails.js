@@ -39,7 +39,9 @@ const CharacterDetails = () => {
                         </div>
                         <div className="col-12 col-sm-6 col-md-4">
                            <h2 className="character-name">{character?.name}</h2>
-                           <h3 className="character-status">
+                           <h3
+                              className={`character-status charachter-status--${character?.status.toLowerCase()}`}
+                           >
                               {character?.status} - {character?.species}
                            </h3>
                         </div>
