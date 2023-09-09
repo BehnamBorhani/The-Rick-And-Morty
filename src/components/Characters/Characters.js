@@ -5,6 +5,7 @@ import { RingLoader } from "react-spinners";
 import SearchBox from "../SearchBox/SearchBox";
 import useFilter from "../../hooks/useFilter";
 import Pagination from "../Pagination/Pagination";
+import swal from "sweetalert";
 
 const Characters = () => {
    const [name, setName] = useState("");
@@ -14,6 +15,7 @@ const Characters = () => {
    const {
       data: filteredData,
       isLoading,
+      isError,
       refetch,
    } = useFilter(page, name, gender, status);
 
@@ -28,6 +30,15 @@ const Characters = () => {
          refetch();
       }
    }, [name, gender, status]);
+
+   if (isError || filteredData?.hasOwnProperty("error")) {
+      swal({
+         title: "Oops!",
+         text: "Characters Not Found",
+         icon: "error",
+         buttons: "ok",
+      }).then(() => refetch());
+   }
 
    return (
       <section id="characters">
