@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# The Rick And Morty Web Application
+This application show all of characters in The Rick And Morty series. You can search your favorite characters and see some details about that (such as character name, gender, status, origin and etc...).
+
+## Demo
+
+The application is live on link below:
+
+https://the-rick-and-morty-tau.vercel.app/
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

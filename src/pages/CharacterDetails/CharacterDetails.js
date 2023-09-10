@@ -3,15 +3,37 @@ import "./CharacterDetails.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useCharacter from "../../hooks/useCharacter";
 import { RingLoader } from "react-spinners";
 import useEpisode from "../../hooks/useEpisode";
+import swal from "sweetalert";
 
 const CharacterDetails = () => {
+   const navigate = useNavigate();
    const { characterID } = useParams();
-   const { data: character, isLoading } = useCharacter(characterID);
+   const {
+      data: character,
+      isLoading,
+      isError,
+      refetch,
+   } = useCharacter(characterID);
    const { data: episode } = useEpisode(character?.episode[0]);
+
+   if (isError) {
+      swal({
+         title: "Oops!",
+         text: "Character Not Found",
+         icon: "error",
+         buttons: ["back", "try again"],
+      }).then((result) => {
+         if (result) {
+            refetch();
+         } else {
+            navigate("/");
+         }
+      });
+   }
 
    return (
       <>
