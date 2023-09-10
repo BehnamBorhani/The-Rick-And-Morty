@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import "./CharacterDetails.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
@@ -34,6 +34,10 @@ const CharacterDetails = () => {
          }
       });
    }
+
+   useLayoutEffect(() => {
+      window.scrollTo(0, 300);
+   }, []);
 
    return (
       <>
