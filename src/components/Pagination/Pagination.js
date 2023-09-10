@@ -21,7 +21,10 @@ const Pagination = ({ pageCount, page, setPage }) => {
                         pageNumber === page ? "active" : ""
                      }`}
                      key={pageNumber}
-                     onClick={() => setPage(pageNumber)}
+                     onClick={() => {
+                        setPage(pageNumber);
+                        window.scrollTo(0, 300);
+                     }}
                   >
                      {pageNumber}
                   </li>

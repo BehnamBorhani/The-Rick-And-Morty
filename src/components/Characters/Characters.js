@@ -63,9 +63,10 @@ const Characters = () => {
                      />
                   </div>
                ) : (
-                  filteredData?.results?.map((character) => (
+                  filteredData?.results?.map((character, index) => (
                      <div
                         className="col-12 col-md-6 col-lg-4 col-xl-3"
+                        data-aos={index % 2 === 0 ? "flip-right" : "flip-left"}
                         key={character.id}
                      >
                         <CharacterCard {...character} />
